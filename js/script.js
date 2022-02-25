@@ -35,11 +35,11 @@ buttonEnter.addEventListener("click", function () {
         console.log(userEmail[i]);
 
         if (element !== emailForm) {
-            /*   console.log("non puoi entrare"); */
+            console.log("non puoi entrare");
         } else {
             approved = true;
-            /*  console.log("puoi entrare", approved); */
-            return
+            console.log("puoi entrare", approved);
+            break
         }
     }
     if (approved === true) {
@@ -47,6 +47,7 @@ buttonEnter.addEventListener("click", function () {
         messageUser = "Puoi accedere, l'email corretta";
 
     } else {
+        console.log(approved)
         messageUser = "Mi dispiace non puoi accedere inserisci l'email corretta";
     }
 
