@@ -12,6 +12,8 @@ const emailElement = document.getElementById("my-email");
 /* console.log("emailElement"); */
 const buttonEnter = document.getElementById("enter");
 
+
+
 //*Creo un array di Email*/
 const userEmail = ["salvo@gmail", "franco@gmail", "luigi@gmail"];
 console.table(userEmail);
@@ -20,25 +22,39 @@ console.table(userEmail);
 
 //*LEGO UN EVENTO AL CLICK DI UN BUTTON
 buttonEnter.addEventListener("click", function () {
+    //*RECUPERO GLI ELEMENTI DAL DOM
+    const messageEmailElement = document.getElementById("my-message-email");
+
     //? RECUPERO I VALORI DEL FOR EMAIL
     let emailForm = emailElement.value;
-
-
+    let approved = false;
+    let messageUser = "";
     // ! CONVALIDA DATI CON UN CICLO FOR
     for (let i = 0; i < userEmail.length; i++) {
+        const element = userEmail[i];
+        console.log(userEmail[i]);
 
-
-        let approved = false;
-        //! convalida
-        if (userEmail[i] === emailForm) {
-            approved = true;
-            console.log("puoi entrare", approved);
+        if (element !== emailForm) {
+            /*   console.log("non puoi entrare"); */
         } else {
-            console.log("non puoi entrare", approved);
+            approved = true;
+            /*  console.log("puoi entrare", approved); */
+            return
         }
     }
+    if (approved === true) {
+        console.log(approved)
+        messageUser = "Puoi accedere, l'email corretta";
 
-})
+    } else {
+        messageUser = "Mi dispiace non puoi accedere inserisci l'email corretta";
+    }
+
+    messageEmailElement.innerHTML = messageUser;
+});
+
+
+
 
 
 
