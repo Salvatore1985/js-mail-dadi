@@ -63,29 +63,39 @@ buttonEnter.addEventListener("click", function () {
 //*RECUPERO L'ELEMENTO DEL DOM
 const cpuNumberOne = document.getElementById("number-cpu1");
 const cpuNumberTwo = document.getElementById("number-cpu2");
+const messagePlayElement = document.getElementById("my-message-play");
 
-//*GREO VARIABILE PER NUMERI CASUALI DA  1 A 6
-let sumCpu1 = Math.floor(Math.random() * 6) + 1;
-console.log(sumCpu1);
-let sumCpu2 = Math.floor(Math.random() * 6) + 1;
-console.log(sumCpu2);
-
-//*VARIABILE
-let messagePlay = "";
-
-if (sumCpu1 === sumCpu2) {
-    messagePlay = "i numeri sono uguali";
-    console.log(messagePlay);
-} else if (!(sumCpu1 > sumCpu2)) {
-    messagePlay = "Cpu2 vince";
-    console.log(messagePlay);
-} else {
-    messagePlay = "Cpu1 vince";
-    console.log(messagePlay);
-}
+//* RECUPERO GLI ELEMENTI DEL FORM
+const buttonResult = document.getElementById("result");
 
 
-cpuNumberOne.innerHTML = sumCpu1;
-cpuNumberTwo.innerHTML = sumCpu2;
 
+//*LEGO UN EVENTO AL CLICK DI UN BUTTON
+buttonResult.addEventListener("click", function () {
+
+    //*GREO VARIABILE PER NUMERI CASUALI DA  1 A 6
+    let sumCpu1 = Math.floor(Math.random() * 6) + 1;
+    console.log(sumCpu1);
+    let sumCpu2 = Math.floor(Math.random() * 6) + 1;
+    console.log(sumCpu2);
+
+    //*VARIABILE
+    let messagePlay = "";
+    // ! CONVALIDA DATI 
+    if (sumCpu1 === sumCpu2) {
+        messagePlay = "i numeri sono uguali";
+        console.log(messagePlay);
+    } else if (!(sumCpu1 > sumCpu2)) {
+        messagePlay = "Cpu2 vince";
+        console.log(messagePlay);
+    } else {
+        messagePlay = "Cpu1 vince";
+        console.log(messagePlay);
+    }
+
+    //* INSERISCO I DATI DENTRO NEL DOM TRAMITE ID
+    cpuNumberOne.innerHTML = sumCpu1;
+    cpuNumberTwo.innerHTML = sumCpu2;
+    messagePlayElement.innerHTML = messagePlay;
+})
 
