@@ -16,6 +16,13 @@ const emailElement = document.getElementById("my-email");
 const userEmail = ["salvo@gmail", "franco@gmail", "luigi@gmail"];
 /* console.table(userEmail); */
 
+//? RECUPERO I VALORI DEL FOR EMAIL
+let emailForm = emailElement.value;
+console.log(emailForm);
+
+
+
+
 // ! CONVALIDA DATI CON UN CICLO FOR
 for (let i = 0; i < userEmail.length; i++) {
     const emailCurrent = userEmail[i];
