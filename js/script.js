@@ -55,9 +55,37 @@ buttonEnter.addEventListener("click", function () {
 });
 
 
+/**
+ ** DADI
+ * Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
+    Stabilire il vincitore, in base a chi fa il punteggio più alto.
+ */
+//*RECUPERO L'ELEMENTO DEL DOM
+const cpuNumberOne = document.getElementById("number-cpu1");
+const cpuNumberTwo = document.getElementById("number-cpu2");
+
+//*GREO VARIABILE PER NUMERI CASUALI DA  1 A 6
+let sumCpu1 = Math.floor(Math.random() * 6) + 1;
+console.log(sumCpu1);
+let sumCpu2 = Math.floor(Math.random() * 6) + 1;
+console.log(sumCpu2);
+
+//*VARIABILE
+let messagePlay = "";
+
+if (sumCpu1 === sumCpu2) {
+    messagePlay = "i numeri sono uguali";
+    console.log(messagePlay);
+} else if (!(sumCpu1 > sumCpu2)) {
+    messagePlay = "Cpu2 vince";
+    console.log(messagePlay);
+} else {
+    messagePlay = "Cpu1 vince";
+    console.log(messagePlay);
+}
 
 
-
-
+cpuNumberOne.innerHTML = sumCpu1;
+cpuNumberTwo.innerHTML = sumCpu2;
 
 
