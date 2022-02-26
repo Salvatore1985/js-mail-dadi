@@ -64,11 +64,16 @@ buttonEnter.addEventListener("click", function () {
 const cpuNumberOne = document.getElementById("number-cpu1");
 const cpuNumberTwo = document.getElementById("number-cpu2");
 const messagePlayElement = document.getElementById("my-message-play");
-
+const wrapper = document.getElementById('for-wrapper');
 //* RECUPERO GLI ELEMENTI DEL FORM
 const buttonResult = document.getElementById("result");
 
 
+// creo il span di riferimento
+let newWrapper = document.querySelector('span#for-wrapper');
+console.log(newWrapper);
+let newI = document.createElement('i');
+console.log(newI);
 
 //*LEGO UN EVENTO AL CLICK DI UN BUTTON
 buttonResult.addEventListener("click", function () {
@@ -78,6 +83,7 @@ buttonResult.addEventListener("click", function () {
     console.log(sumCpu1);
     let sumCpu2 = Math.floor(Math.random() * 6) + 1;
     console.log(sumCpu2);
+
 
     //*VARIABILE
     let messagePlay = "";
@@ -93,9 +99,69 @@ buttonResult.addEventListener("click", function () {
         console.log(messagePlay);
     }
 
+    newWrapper.append(newI);
+
+
+    switch (sumCpu1) {
+        case 1:
+            newI.classList.add("fas", "fa-dice-one", "fs-1");
+            newI.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+            break;
+        case 2:
+            newI.classList.add("fas", "fa-dice-two", "fs-1");
+            newI.classList.remove("fa-dice-one", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+            break;
+        case 3:
+            newI.classList.add("fas", "fa-dice-three", "fs-1");
+            newI.classList.remove("fa-dice-two", "fa-dice-one", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+            break;
+        case 4:
+            newI.classList.add("fas", "fa-dice-four", "fs-1");
+            newI.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-one", "fa-dice-five", "fa-dice-six");
+            break;
+        case 5:
+            newI.classList.add("fas", "fa-dice-five", "fs-1");
+            newI.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-one", "fa-dice-six");
+            break;
+        case 6:
+            newI.classList.add("fas", "fa-dice-six", "fs-1");
+            newI.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-one");
+            break;
+    }
+
+
+    switch (sumCpu2) {
+        case 1:
+            newI.classList.add("fas", "fa-dice-one", "fs-1");
+            newI.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+            break;
+        case 2:
+            newI.classList.add("fas", "fa-dice-two", "fs-1");
+            newI.classList.remove("fa-dice-one", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+            break;
+        case 3:
+            newI.classList.add("fas", "fa-dice-three", "fs-1");
+            newI.classList.remove("fa-dice-two", "fa-dice-one", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+            break;
+        case 4:
+            newI.classList.add("fas", "fa-dice-four", "fs-1");
+            newI.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-one", "fa-dice-five", "fa-dice-six");
+            break;
+        case 5:
+            newI.classList.add("fas", "fa-dice-five", "fs-1");
+            newI.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-one", "fa-dice-six");
+            break;
+        case 6:
+            newI.classList.add("fas", "fa-dice-six", "fs-1");
+            newI.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-one");
+            break;
+    }
+
     //* INSERISCO I DATI DENTRO NEL DOM TRAMITE ID
     cpuNumberOne.innerHTML = sumCpu1;
     cpuNumberTwo.innerHTML = sumCpu2;
     messagePlayElement.innerHTML = messagePlay;
+
+
 })
 
