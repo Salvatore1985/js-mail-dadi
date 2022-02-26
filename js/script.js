@@ -70,10 +70,13 @@ const buttonResult = document.getElementById("result");
 
 
 // creo il span di riferimento
-let newWrapper = document.querySelector('span#for-wrapper');
-console.log(newWrapper);
-let newI = document.createElement('i');
-console.log(newI);
+/* let newWrapper = document.querySelector('span#for-wrapper');
+console.log(newWrapper); */
+let newIOne = document.createElement('i');
+console.log(newIOne);
+
+let newITwo = document.createElement('i');
+console.log(newITwo);
 
 //*LEGO UN EVENTO AL CLICK DI UN BUTTON
 buttonResult.addEventListener("click", function () {
@@ -99,67 +102,68 @@ buttonResult.addEventListener("click", function () {
         console.log(messagePlay);
     }
 
-    newWrapper.append(newI);
-
+    /*   newWrapper.append(newI); */
+    cpuNumberOne.append(newIOne);
+    cpuNumberTwo.append(newITwo);
 
     switch (sumCpu1) {
         case 1:
-            newI.classList.add("fas", "fa-dice-one", "fs-1");
-            newI.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+            newIOne.classList.add("fas", "fa-dice-one", "fs-1");
+            newIOne.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
             break;
         case 2:
-            newI.classList.add("fas", "fa-dice-two", "fs-1");
-            newI.classList.remove("fa-dice-one", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+            newIOne.classList.add("fas", "fa-dice-two", "fs-1");
+            newIOne.classList.remove("fa-dice-one", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
             break;
         case 3:
-            newI.classList.add("fas", "fa-dice-three", "fs-1");
-            newI.classList.remove("fa-dice-two", "fa-dice-one", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+            newIOne.classList.add("fas", "fa-dice-three", "fs-1");
+            newIOne.classList.remove("fa-dice-two", "fa-dice-one", "fa-dice-four", "fa-dice-five", "fa-dice-six");
             break;
         case 4:
-            newI.classList.add("fas", "fa-dice-four", "fs-1");
-            newI.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-one", "fa-dice-five", "fa-dice-six");
+            newIOne.classList.add("fas", "fa-dice-four", "fs-1");
+            newIOne.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-one", "fa-dice-five", "fa-dice-six");
             break;
         case 5:
-            newI.classList.add("fas", "fa-dice-five", "fs-1");
-            newI.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-one", "fa-dice-six");
+            newIOne.classList.add("fas", "fa-dice-five", "fs-1");
+            newIOne.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-one", "fa-dice-six");
             break;
         case 6:
-            newI.classList.add("fas", "fa-dice-six", "fs-1");
-            newI.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-one");
+            newIOne.classList.add("fas", "fa-dice-six", "fs-1");
+            newIOne.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-one");
             break;
     }
 
 
     switch (sumCpu2) {
         case 1:
-            newI.classList.add("fas", "fa-dice-one", "fs-1");
-            newI.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+            newITwo.classList.add("fas", "fa-dice-one", "fs-1");
+            newITwo.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
             break;
         case 2:
-            newI.classList.add("fas", "fa-dice-two", "fs-1");
-            newI.classList.remove("fa-dice-one", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+            newITwo.classList.add("fas", "fa-dice-two", "fs-1");
+            newITwo.classList.remove("fa-dice-one", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
             break;
         case 3:
-            newI.classList.add("fas", "fa-dice-three", "fs-1");
-            newI.classList.remove("fa-dice-two", "fa-dice-one", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+            newITwo.classList.add("fas", "fa-dice-three", "fs-1");
+            newITwo.classList.remove("fa-dice-two", "fa-dice-one", "fa-dice-four", "fa-dice-five", "fa-dice-six");
             break;
         case 4:
-            newI.classList.add("fas", "fa-dice-four", "fs-1");
-            newI.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-one", "fa-dice-five", "fa-dice-six");
+            newITwo.classList.add("fas", "fa-dice-four", "fs-1");
+            newITwo.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-one", "fa-dice-five", "fa-dice-six");
             break;
         case 5:
-            newI.classList.add("fas", "fa-dice-five", "fs-1");
-            newI.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-one", "fa-dice-six");
+            newITwo.classList.add("fas", "fa-dice-five", "fs-1");
+            newITwo.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-one", "fa-dice-six");
             break;
         case 6:
-            newI.classList.add("fas", "fa-dice-six", "fs-1");
-            newI.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-one");
+            newITwo.classList.add("fas", "fa-dice-six", "fs-1");
+            newITwo.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-one");
             break;
     }
 
     //* INSERISCO I DATI DENTRO NEL DOM TRAMITE ID
-    cpuNumberOne.innerHTML = sumCpu1;
-    cpuNumberTwo.innerHTML = sumCpu2;
+    /*   cpuNumberOne.innerHTML = sumCpu1;
+      cpuNumberTwo.innerHTML = sumCpu2; */
     messagePlayElement.innerHTML = messagePlay;
 
 
