@@ -95,17 +95,23 @@ buttonResult.addEventListener("click", function () {
     let messageIcons;
     // ! CONVALIDA DATI 
     if (sumCpu1 === sumCpu2) {
-        messagePlay = "i numeri sono uguali il dado è : ";
+        messagePlay = "i numeri sono uguali il dado è il : ";
         console.log(messagePlay);
         messageIcons = sumCpu1;
+        newIOne.classList.remove("my-color-blue");
+        newITwo.classList.remove("my-color-blue");
     } else if (!(sumCpu1 > sumCpu2)) {
-        messagePlay = "Cpu2 vince il dado che ha vinto è : ";
+        messagePlay = "Cpu2 vince il dado che ha vinto è il : ";
         console.log(messagePlay);
         messageIcons = sumCpu2;
+        newITwo.classList.add("my-color-blue");
+        newIOne.classList.remove("my-color-blue");
     } else {
-        messagePlay = "Cpu1 vince il dado che ha vinto è : ";
+        messagePlay = "Cpu1 vince il dado che ha vinto è il : ";
         console.log(messagePlay);
         messageIcons = sumCpu1;
+        newIOne.classList.add("my-color-blue");
+        newITwo.classList.remove("my-color-blue");
     }
 
 
