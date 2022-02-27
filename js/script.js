@@ -64,19 +64,21 @@ buttonEnter.addEventListener("click", function () {
 const cpuNumberOne = document.getElementById("number-cpu1");
 const cpuNumberTwo = document.getElementById("number-cpu2");
 const messagePlayElement = document.getElementById("my-message-play");
-const wrapper = document.getElementById('for-wrapper');
+const messageIconsElement = document.getElementById("my-message-icons");
 //* RECUPERO GLI ELEMENTI DEL FORM
 const buttonResult = document.getElementById("result");
 
 
 // creo il span di riferimento
-/* let newWrapper = document.querySelector('span#for-wrapper');
-console.log(newWrapper); */
+
 let newIOne = document.createElement('i');
 console.log(newIOne);
 
 let newITwo = document.createElement('i');
 console.log(newITwo);
+
+let newIIcons = document.createElement('i');
+console.log(newIIcons);
 
 //*LEGO UN EVENTO AL CLICK DI UN BUTTON
 buttonResult.addEventListener("click", function () {
@@ -90,19 +92,23 @@ buttonResult.addEventListener("click", function () {
 
     //*VARIABILE
     let messagePlay = "";
+    let messageIcons;
     // ! CONVALIDA DATI 
     if (sumCpu1 === sumCpu2) {
-        messagePlay = "i numeri sono uguali";
+        messagePlay = "i numeri sono uguali il dado è : ";
         console.log(messagePlay);
+        messageIcons = sumCpu1;
     } else if (!(sumCpu1 > sumCpu2)) {
-        messagePlay = "Cpu2 vince";
+        messagePlay = "Cpu2 vince il dado che ha vinto è : ";
         console.log(messagePlay);
+        messageIcons = sumCpu2;
     } else {
-        messagePlay = "Cpu1 vince";
+        messagePlay = "Cpu1 vince il dado che ha vinto è : ";
         console.log(messagePlay);
+        messageIcons = sumCpu1;
     }
 
-    /*   newWrapper.append(newI); */
+
     cpuNumberOne.append(newIOne);
     cpuNumberTwo.append(newITwo);
 
@@ -161,11 +167,95 @@ buttonResult.addEventListener("click", function () {
             break;
     }
 
+
+    if (sumCpu1 === sumCpu2) {
+        switch (sumCpu1) {
+            case 1:
+                newIIcons.classList.add("fas", "fa-dice-one", "fs-1");
+                newIIcons.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+                break;
+            case 2:
+                newIIcons.classList.add("fas", "fa-dice-two", "fs-1");
+                newIIcons.classList.remove("fa-dice-one", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+                break;
+            case 3:
+                newIIcons.classList.add("fas", "fa-dice-three", "fs-1");
+                newIIcons.classList.remove("fa-dice-two", "fa-dice-one", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+                break;
+            case 4:
+                newIIcons.classList.add("fas", "fa-dice-four", "fs-1");
+                newIIcons.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-one", "fa-dice-five", "fa-dice-six");
+                break;
+            case 5:
+                newIIcons.classList.add("fas", "fa-dice-five", "fs-1");
+                newIIcons.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-one", "fa-dice-six");
+                break;
+            case 6:
+                newIIcons.classList.add("fas", "fa-dice-six", "fs-1");
+                newIIcons.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-one");
+                break;
+        }
+    } else if (!(sumCpu1 > sumCpu2)) {
+        switch (sumCpu2) {
+            case 1:
+                newIIcons.classList.add("fas", "fa-dice-one", "fs-1");
+                newIIcons.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+                break;
+            case 2:
+                newIIcons.classList.add("fas", "fa-dice-two", "fs-1");
+                newIIcons.classList.remove("fa-dice-one", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+                break;
+            case 3:
+                newIIcons.classList.add("fas", "fa-dice-three", "fs-1");
+                newIIcons.classList.remove("fa-dice-two", "fa-dice-one", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+                break;
+            case 4:
+                newIIcons.classList.add("fas", "fa-dice-four", "fs-1");
+                newIIcons.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-one", "fa-dice-five", "fa-dice-six");
+                break;
+            case 5:
+                newIIcons.classList.add("fas", "fa-dice-five", "fs-1");
+                newIIcons.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-one", "fa-dice-six");
+                break;
+            case 6:
+                newIIcons.classList.add("fas", "fa-dice-six", "fs-1");
+                newIIcons.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-one");
+                break;
+        }
+    } else {
+        switch (sumCpu1) {
+            case 1:
+                newIIcons.classList.add("fas", "fa-dice-one", "fs-1");
+                newIIcons.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+                break;
+            case 2:
+                newIIcons.classList.add("fas", "fa-dice-two", "fs-1");
+                newIIcons.classList.remove("fa-dice-one", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+                break;
+            case 3:
+                newIIcons.classList.add("fas", "fa-dice-three", "fs-1");
+                newIIcons.classList.remove("fa-dice-two", "fa-dice-one", "fa-dice-four", "fa-dice-five", "fa-dice-six");
+                break;
+            case 4:
+                newIIcons.classList.add("fas", "fa-dice-four", "fs-1");
+                newIIcons.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-one", "fa-dice-five", "fa-dice-six");
+                break;
+            case 5:
+                newIIcons.classList.add("fas", "fa-dice-five", "fs-1");
+                newIIcons.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-one", "fa-dice-six");
+                break;
+            case 6:
+                newIIcons.classList.add("fas", "fa-dice-six", "fs-1");
+                newIIcons.classList.remove("fa-dice-two", "fa-dice-three", "fa-dice-four", "fa-dice-five", "fa-dice-one");
+                break;
+        }
+
+    }
+
+
     //* INSERISCO I DATI DENTRO NEL DOM TRAMITE ID
-    /*   cpuNumberOne.innerHTML = sumCpu1;
-      cpuNumberTwo.innerHTML = sumCpu2; */
     messagePlayElement.innerHTML = messagePlay;
-
-
+    messageIconsElement.append(newIIcons);
 })
+
 
